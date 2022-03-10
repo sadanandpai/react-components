@@ -10,12 +10,7 @@ const Shuffler1D = () => {
     "strawberry",
     "watermelon",
     "pineapple",
-    "grape",
-    "cherry",
-    "peach",
-    "mango",
-    "kiwi",
-    "papaya",
+    "grape"
   ]);
 
   const randomizeFruits = () => {
