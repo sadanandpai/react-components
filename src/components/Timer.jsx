@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 
 const getLSB = (num) => num.toString().padStart(2, 0)[0];
@@ -40,7 +40,7 @@ const Timer = () => {
   }, [time]);
 
   return (
-    <h1 className="flex text-5xl relative w-72 m-auto mt-20">
+    <h1 className="flex text-5xl relative w-64 m-auto mt-20">
       <AnimatePresence>
         {getDigitEl(["h1", time.h1], 0)}
         {getDigitEl(["h2", time.h2], 1)}
