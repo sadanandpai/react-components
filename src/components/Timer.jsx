@@ -8,6 +8,18 @@ const initial = { y: 50, opacity: 0 };
 const exit = { y: -50, opacity: 0 };
 const animate = { y: 0, opacity: 1 };
 
+const setNewTime = () => {
+  const date = new Date();
+  return {
+    h1: getLSB(date.getHours()),
+    h2: getMSB(date.getHours()),
+    m1: getLSB(date.getMinutes()),
+    m2: getMSB(date.getMinutes()),
+    s1: getLSB(date.getSeconds()),
+    s2: getMSB(date.getSeconds()),
+  };
+};
+
 const getDigitEl = ([key, value], pos) => (
   <motion.div
     className={`absolute left-${pos * 8} flex justify-center items-center w-8 h-12`}
@@ -21,36 +33,27 @@ const getDigitEl = ([key, value], pos) => (
 );
 
 const Timer = () => {
-  const [time, setTime] = useState(new Date());
-  const timeObj = useRef({});
+  const [time, setTime] = useState(setNewTime);
 
   useEffect(() => {
-    timeObj.current = {
-      h1: getLSB(time.getHours()),
-      h2: getMSB(time.getHours()),
-      m1: getLSB(time.getMinutes()),
-      m2: getMSB(time.getMinutes()),
-      s1: getLSB(time.getSeconds()),
-      s2: getMSB(time.getSeconds()),
-    };
-    setTimeout(setTime, 1000, new Date());
+    setTimeout(setTime, 1000, setNewTime());
   }, [time]);
 
   return (
     <h1 className="flex text-5xl relative w-72 m-auto mt-20">
       <AnimatePresence>
-        {getDigitEl(["h1", timeObj.current.h1], 0)}
-        {getDigitEl(["h2", timeObj.current.h2], 1)}
+        {getDigitEl(["h1", time.h1], 0)}
+        {getDigitEl(["h2", time.h2], 1)}
 
         {getDigitEl(["x", ":"], 2)}
 
-        {getDigitEl(["m1", timeObj.current.m1], 3)}
-        {getDigitEl(["m2", timeObj.current.m2], 4)}
+        {getDigitEl(["m1", time.m1], 3)}
+        {getDigitEl(["m2", time.m2], 4)}
 
         {getDigitEl(["y", ":"], 5)}
 
-        {getDigitEl(["s1", timeObj.current.s1], 6)}
-        {getDigitEl(["s2", timeObj.current.s2], 7)}
+        {getDigitEl(["s1", time.s1], 6)}
+        {getDigitEl(["s2", time.s2], 7)}
       </AnimatePresence>
     </h1>
   );
