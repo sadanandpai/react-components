@@ -6,6 +6,7 @@ import App from "./App";
 import Shuffler2D from "./components/Shuffler2D";
 import Shuffler1D from "./components/Shuffler1D";
 import Stagger from "./components/Stagger";
+import Timer from "./components/Timer";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -15,6 +16,7 @@ ReactDOM.render(
           <Route path="shuffler-1D" element={<Shuffler1D />} />
           <Route path="shuffler-2D" element={<Shuffler2D />} />
           <Route path="stagger" element={<Stagger />} />
+          <Route path="timer" element={<Timer />} />
         </Route>
       </Routes>
     </HashRouter>
