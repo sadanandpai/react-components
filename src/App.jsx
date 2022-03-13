@@ -1,7 +1,7 @@
 import { Link, Outlet, useLocation } from "react-router-dom";
 import { motion } from "framer-motion";
 
-const routes = ["/shuffler-1D", "/shuffler-2D", "/stagger", "/timer"];
+const routes = ["/shuffler-1D", "/shuffler-2D", "/stagger", "/timer", '/list'];
 
 function App() {
   const location = useLocation();

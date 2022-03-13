@@ -36,6 +36,7 @@ const Stagger = () => {
       transition: {
         when: "afterChildren",
         staggerChildren: 0.1,
+        staggerDirection: -1,
       },
     },
     visible: {
@@ -55,14 +56,14 @@ const Stagger = () => {
 
   return (
     <>
-      <motion.ul initial="hidden" animate={state} variants={listVariant} className="bg-slate-100">
-        {fruits.map((el) => getItem(el, itemVariant))}
-      </motion.ul>
       <div className="text-center">
         <button onClick={reverseVariant} className="px-4 py-2 bg-pink-400 rounded-md my-2">
           Animate
         </button>
       </div>
+      <motion.ul initial="hidden" animate={state} variants={listVariant}>
+        {fruits.map((el) => getItem(el, itemVariant))}
+      </motion.ul>
     </>
   );
 };
