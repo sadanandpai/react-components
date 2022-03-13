@@ -8,6 +8,7 @@ import Shuffler1D from "./components/Shuffler1D";
 import Stagger from "./components/Stagger";
 import Timer from "./components/Timer";
 import List from "./components/List";
+import Scroll from "./components/Scroll";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -19,6 +20,7 @@ ReactDOM.render(
           <Route path="stagger" element={<Stagger />} />
           <Route path="timer" element={<Timer />} />
           <Route path="list" element={<List />} />
+          <Route path="scroll" element={<Scroll />} />
         </Route>
       </Routes>
     </HashRouter>
