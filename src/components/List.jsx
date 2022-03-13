@@ -10,6 +10,11 @@ const items = [
   "watermelon",
   "pineapple",
   "grape",
+  "peach",
+  "cherry",
+  "mango",
+  "kiwi",
+  "blueberry",
 ];
 
 const initial = { height: 0, opacity: 0 };
@@ -31,7 +36,7 @@ const List = () => {
         className="border-2 border-grey mb-4 p-2"
         placeholder="Search"
         value={searchText}
-        onChange={(e) => setSearchText(e.target.value)}
+        onChange={(e) => setSearchText(e.target.value.toLowerCase())}
       />
       <div className="flex flex-col gap-y-2">
         <AnimatePresence>
